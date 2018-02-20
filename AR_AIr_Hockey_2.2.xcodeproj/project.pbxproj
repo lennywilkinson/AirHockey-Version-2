@@ -52,7 +52,7 @@
 		4E199420203660BC00E9FBB9 = {
 			isa = PBXGroup;
 			children = (
-				4E19942B203660BC00E9FBB9 /* AR_AIr_Hockey_2.2 */,
+				4E19942B203660BC00E9FBB9 /* AirHockey_v2 */,
 				4E19942A203660BC00E9FBB9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,7 +65,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4E19942B203660BC00E9FBB9 /* AR_AIr_Hockey_2.2 */ = {
+		4E19942B203660BC00E9FBB9 /* AirHockey_v2 */ = {
 			isa = PBXGroup;
 			children = (
 				4E1994382036614100E9FBB9 /* GameData.h */,
@@ -78,7 +78,7 @@
 				4E1994362036614100E9FBB9 /* Sensor.h */,
 				4E19942C203660BC00E9FBB9 /* GameHost.cpp */,
 			);
-			path = AR_AIr_Hockey_2.2;
+			path = AirHockey_v2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
