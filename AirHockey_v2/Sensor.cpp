@@ -10,7 +10,7 @@ double distance(cv::Point2d a, cv::Point2d b) {
 }
 
 // Constructor, initializes IR sensor and flare detection
-Sensor::Sensor(const int port = 0) {
+Sensor::Sensor(const int port) {
 
 	// open port to IR sensor
 	sensor_ir = *(new VideoCapture(0));

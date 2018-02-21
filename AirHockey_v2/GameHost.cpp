@@ -1,4 +1,7 @@
+#ifdef _WIN32
 #pragma once
+#endif
+
 #include "GameHost.h"
 
 // create graphics, physics and sensor instance references
@@ -8,6 +11,9 @@ Sensor *sensor;
 
 // Main, handles setup and spawns physics, sensor and graphics threads
 int main() {
+
+	// announce process started successfully
+	std::cout << "Starting AirHockey Version 2.0.5" << std::endl;
 
 	// record the starting time of the program
 	auto startTime = std::chrono::steady_clock::now();
@@ -37,7 +43,15 @@ int main() {
 	}
 
 	// create window
-	graphics->spawnWindow(true);	// DEBUG ONLY, CHANGE TO true FOR PROD
+#ifdef __APPLE__
+
+	// fullscreen crashes on Mac, don't use it
+	graphics->spawnWindow(false);
+#else
+
+	// fullscreen works on real computers, use it
+	graphics->spawnWindow(true);
+#endif
 
 	// draw startup image, refresh screen
 	graphics->drawStartupSplashImage();
