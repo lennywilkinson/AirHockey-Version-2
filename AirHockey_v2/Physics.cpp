@@ -175,13 +175,13 @@ int Physics::detectGoals() {
 		return 0;
 
 	// check if puck intersects with "left" goal
-	if (puck_position[0] <= PUCK_RADIUS + WALL_PADDING_THICKNESS)
+	if (puck_position[0] <= (WALL_PADDING_THICKNESS - PUCK_RADIUS))
 
 		// report player two goal
 		return 2;
 
 	// check if puck intersects with "right" goal
-	if (puck_position[0] >= table_width - PUCK_RADIUS - WALL_PADDING_THICKNESS)
+	if (puck_position[0] >= table_width - (WALL_PADDING_THICKNESS - PUCK_RADIUS))
 
 		// report player one goal
 		return 1;

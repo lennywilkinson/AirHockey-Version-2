@@ -13,7 +13,7 @@ double distance(cv::Point2d a, cv::Point2d b) {
 Sensor::Sensor(const int port) {
 
 	// open port to IR sensor
-	sensor_ir = *(new VideoCapture(0));
+	sensor_ir = *(new VideoCapture(port));
 
 	// create empty image container
 	Mat setupImage;
@@ -75,7 +75,7 @@ void Sensor::processFrame() {
 	Mat alphaImage, dilatedAlphaImage, imageForDetector;
 
 	// fill container with binary image to filer low brightness false positives
-	inRange(bufferImage, Scalar(0, 0, 0), Scalar(200, 200, 200), alphaImage);
+	inRange(bufferImage, Scalar(0, 0, 0), Scalar(240, 240, 240), alphaImage);
 
 	// fill container with dilated version of alpha image to close gaps
 	dilate(alphaImage, dilatedAlphaImage, 0, Point(-1, -1), 5);
